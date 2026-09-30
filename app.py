@@ -50,17 +50,16 @@ def index():
 
 @app.route("/mahasiswa", methods=["GET", "POST"])
 def mahasiswa():
-    """Demo command injection — JANGAN digunakan di production."""
     hasil = None
 
     if request.method == "POST":
         nama = request.form.get("nama", "")
 
-        # VULNERABLE: input user langsung digabung ke shell command
-        import subprocess
-        hasil = subprocess.getoutput(f"echo Data mahasiswa: {nama}")
+        # Aman: tidak ada shell yang memproses input user
+        hasil = f"Data mahasiswa: {nama}"
 
     return render_template("mahasiswa.html", hasil=hasil)
+
 
 if __name__ == "__main__":
     init_db()

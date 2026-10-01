@@ -19,7 +19,7 @@ def init_db():
     conn.close()
 
 @app.route("/mahasiswa", methods=["GET", "POST"])
-def index():
+def mhs():
     """Menampilkan formulir mahasiswa."""
     print("ini fitur mahasiswa")
 

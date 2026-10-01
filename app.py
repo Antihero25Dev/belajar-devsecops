@@ -18,6 +18,11 @@ def init_db():
     conn.commit()
     conn.close()
 
+@app.route("/mahasiswa", methods=["GET", "POST"])
+def index():
+    """Menampilkan formulir mahasiswa."""
+    print("ini fitur mahasiswa")
+
 @app.route("/", methods=["GET", "POST"])
 def index():
     """Menampilkan formulir login dan memproses autentikasi."""

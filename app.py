@@ -48,6 +48,19 @@ def index():
         "index.html", message=message, status_class=status_class
     )
 
+@app.route("/mahasiswa")
+def mahasiswa():
+    nama = request.args.get("nama", "")
+    
+    # SENGAJA RENTAN: input user langsung masuk ke shell command
+    hasil = subprocess.check_output(
+        f"echo Mahasiswa: {nama}",
+        shell=True,
+        text=True
+    )
+
+    return hasil
+    
 if __name__ == "__main__":
     init_db()
     app.run(host="0.0.0.0", port=5000)  # nosemgrep

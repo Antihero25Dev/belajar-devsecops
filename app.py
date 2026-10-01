@@ -48,19 +48,6 @@ def index():
         "index.html", message=message, status_class=status_class
     )
 
-@app.route("/mahasiswa", methods=["GET", "POST"])
-def mahasiswa():
-    hasil = None
-
-    if request.method == "POST":
-        nama = request.form.get("nama", "")
-
-        # Aman: tidak ada shell yang memproses input user
-        hasil = f"Data mahasiswa: {nama}"
-
-    return render_template("mahasiswa.html", hasil=hasil)
-
-
 if __name__ == "__main__":
     init_db()
     app.run(host="0.0.0.0", port=5000)  # nosemgrep

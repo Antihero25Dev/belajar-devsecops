@@ -92,7 +92,7 @@ def mahasiswa():
     if len(nama) > 100:
         return "Nama mahasiswa terlalu panjang.", 400
 
-    return f"Mahasiswa: {nama}"
+    return "Fitur mahasiswa berhasil dibuat"
 
 
 if __name__ == "__main__":

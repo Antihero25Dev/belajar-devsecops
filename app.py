@@ -21,7 +21,7 @@ def init_db():
 @app.route("/mahasiswa", methods=["GET", "POST"])
 def mhs():
     """Menampilkan formulir mahasiswa."""
-    print("ini fitur mahasiswa")
+    return "<h1> ini fitur mahasiswa </h1>"
 
 @app.route("/", methods=["GET", "POST"])
 def index():
